@@ -1,13 +1,39 @@
-// ReactDom.render(<h1>Hello, everyone!</h1>, document.querySelector("root"));
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import profile_picture from './download.jpeg';
+// import reportWebVitals from './reportWebVitals';
 
-// let newH1 = document.createElement("h1")
-// newH1.textContent = "Oh, my lord!"
-// newH1.className = "header"
-// document.getElementById("root").appendChild(h1)
+const user = {
+  firstName: "Lucky",
+  lastName: "Goergia",
+  dateOfBirth: '1998/02/16',
+  adress: 'Mellow saint avenue Orange Groove Jhb',
+  country: 'South Africa',
+  email: 'luckyGeorgia123@gmail.com',
+  telephone: '073-562-7890',
+  company: 'SMG motors',
+  profile_picture: {profile_picture},
+  shopping_cart: [],
 
-const navbar = (
-    <nav>
-        <h1>BellerLooker</h1>
-        <ul><li>Pricing</li><li>About</li><li>Contact</li></ul>
-    </nav>
+
+}
+console.log(user)
+
+const element = (
+  <h2>
+    Details: {user}
+  </h2>
 )
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    {element}
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
